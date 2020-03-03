@@ -1,0 +1,63 @@
+spring:
+  application:
+    #服务名称
+    name: simple-preview-server-prod
+
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    lettuce:
+      pool:
+        # 最大连接数 默认8
+        max-active: 8
+        # 最大空闲连接数 默认8
+        max-idle: 8
+        # 最小空闲连接数 默认0
+        min-idle: 0
+  #freemaker 配置
+  freemarker:
+    template-loader-path: classpath:/web/
+    cache: false
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
+  mvc:
+    favicon:
+      enabled: false
+
+server:
+  port: 8900
+  tomcat:
+    uri-encoding: UTF-8
+
+#文件转换服务配置
+jodconverter:
+  local:
+    enabled: true
+    office-home: C:\\Program Files (x86)\OpenOffice 4
+    max-tasks-per-process: 10
+    port-numbers: 8002
+
+#操作先关文件存放的根目录,此目录在初始化时候 里面的内容会被删除
+converter:
+  source: d:/conventer/resource
+  temp: d:/conventer/temp
+  target: d:/conventer/target
+
+#最大连接数
+http.maxTotal: 100
+#并发数
+http.defaultMaxPerRoute: 20
+#创建连接的最长时间
+http.connectTimeout: 3000
+#从连接池中获取到连接的最长时间
+http.connectionRequestTimeout: 500
+#数据传输的最长时间
+http.socketTimeout: 100000
+#提交请求前测试连接是否可用
+http.staleConnectionCheckEnabled: true
