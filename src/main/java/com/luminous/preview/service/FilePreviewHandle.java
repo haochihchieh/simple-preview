@@ -21,15 +21,25 @@ public class FilePreviewHandle {
     @Value("${converter.target}")
     private String target;
 
-    /*word文件格式*/
+    /**
+     * word文件格式
+     */
     private static String OFFICE_WORD_TYPE = "doc|docx";
-    /*excel文件格式*/
+    /**
+     * excel文件格式
+     */
     private static String OFFICE_EXCEL_TYPE = "xls|xlsx";
-    /*ppt文件格式*/
+    /**
+     * ppt文件格式
+     */
     private static String OFFICE_PPT_TYPE = "ppt|pptx";
-    /*pdf文件格式*/
+    /**
+     * pdf文件格式
+     */
     private static String PDF_TYPE = "pdf";
-    /*文本文件格式*/
+    /**
+     * 文本文件格式
+     */
     private static String TEXT_TYPE = "txt|sql|java|js|html|xml|html|css|cs";
 
     /**

@@ -1,9 +1,9 @@
 package com.luminous.preview.converter;
 
+import cn.hutool.core.util.IdUtil;
 import com.luminous.preview.common.utils.FileCharsetDetector;
 import com.luminous.preview.common.utils.FileUtil;
 import com.luminous.preview.common.utils.SHAUtil;
-import com.luminous.preview.common.utils.UUIDUtil;
 import com.luminous.preview.domain.dto.TargetFileNature;
 import lombok.extern.slf4j.Slf4j;
 import org.jodconverter.DocumentConverter;
@@ -56,7 +56,7 @@ public class TextFileConverter {
             File hashDir = FileUtil.createDir(targetDir);
             if (hashDir.exists() && hashDir.isDirectory()) {
                 String utf8PathFileName =
-                        temp + File.separator + UUIDUtil.getUUID() + "-utf8.txt";
+                        temp + File.separator + IdUtil.simpleUUID() + "-utf8.txt";
                 try {
                     //获得文件编码
                     FileCharsetDetector.Observer oCharset = FileCharsetDetector.guessFileEncoding(

@@ -25,7 +25,9 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 public class RedisServiceImpl implements RedisService {
 
-    //redis缓存时长90分钟
+    /**
+     * redis缓存时长90分钟
+     */
     private static long TIMEOUT_MINUTES = 90;
 
     @Autowired

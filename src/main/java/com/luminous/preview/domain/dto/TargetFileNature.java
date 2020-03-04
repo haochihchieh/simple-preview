@@ -15,13 +15,19 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 public class TargetFileNature {
 
-    //转化后文件路径名称
+    /**
+     * 转化后文件路径名称
+     */
     private String pathFileName;
 
-    //文件字节大小
+    /**
+     * 文件字节大小
+     */
     private long fileBytes;
 
-    //转换后文件格式
+    /**
+     * 转换后文件格式
+     */
     private String fileExtension;
 
 }
