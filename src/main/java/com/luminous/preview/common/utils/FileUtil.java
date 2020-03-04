@@ -7,7 +7,7 @@ import java.net.URLDecoder;
 import java.nio.charset.Charset;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/21 16:20
  * @Description: 文件操作类
  */

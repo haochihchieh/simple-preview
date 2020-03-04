@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.security.MessageDigest;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/18 15:13
  * @Description: SHA-256计算文件的hash值
  */

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/23 19:08
  * @Description: 文件预览处理
  */

@@ -1,7 +1,7 @@
 package com.luminous.preview.service.download;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/22 11:21
  * @Description:
  */

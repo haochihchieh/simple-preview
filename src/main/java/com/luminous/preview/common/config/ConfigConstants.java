@@ -3,7 +3,7 @@ package com.luminous.preview.common.config;
 import org.springframework.stereotype.Component;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/29 13:36
  * @Description: 当前访问页面的url
  */

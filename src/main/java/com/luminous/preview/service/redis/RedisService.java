@@ -6,7 +6,7 @@ import com.luminous.preview.domain.vo.RedisVo;
 import java.util.List;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/22 9:21
  * @Description:
  */

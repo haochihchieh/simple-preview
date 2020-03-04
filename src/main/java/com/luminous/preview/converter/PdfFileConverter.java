@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/22 10:23
  * @Description: pdf文件转换
  */

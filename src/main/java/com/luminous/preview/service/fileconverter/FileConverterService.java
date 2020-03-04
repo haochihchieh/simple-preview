@@ -3,7 +3,7 @@ package com.luminous.preview.service.fileconverter;
 import com.luminous.preview.domain.dto.TargetFileNature;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/22 10:49
  * @Description:
  */

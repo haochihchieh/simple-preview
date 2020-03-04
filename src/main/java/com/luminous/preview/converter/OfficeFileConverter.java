@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
 import java.io.File;
 
 /**
- * @Auther: haozhijie
+ * @Auther: haochihchieh
  * @Date: 2019/10/22 8:44
  * @Description: office文件转换 word/excel/ppt
  */
