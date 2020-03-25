@@ -2,6 +2,7 @@ package com.luminous.preview.service;
 
 import com.luminous.preview.domain.dto.TargetFileNature;
 import com.luminous.preview.domain.vo.PreviewFileVo;
+import com.luminous.security.utils.TokenCatchUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -63,7 +64,7 @@ public class FilePreviewHandle {
             if (targetFileNature.getPathFileName().startsWith(target)) {
                 String ordinaryUrl =
                         subtractTargetAndFormat(targetFileNature.getPathFileName());
-                model.addAttribute("ordinaryUrl", ordinaryUrl);
+                setOrdinaryUrl(ordinaryUrl, model);
                 log.info("Target方式预览【" + targetFileNature.getPathFileName() +
                         "】/pdf");
                 return "pdf";
@@ -75,7 +76,7 @@ public class FilePreviewHandle {
             if (targetFileNature.getPathFileName().startsWith(target)) {
                 String ordinaryUrl =
                         subtractTargetAndFormat(targetFileNature.getPathFileName());
-                model.addAttribute("ordinaryUrl", ordinaryUrl);
+                setOrdinaryUrl(ordinaryUrl, model);
                 log.info("Target方式预览【" + targetFileNature.getPathFileName() +
                         "】/html");
                 return "html";
@@ -95,9 +96,7 @@ public class FilePreviewHandle {
                 || PDF_TYPE.contains(extension.toLowerCase())) {
             //word ppt pdf 格式都转换成pdf显示
             if (previewFileVo.getPathFileName().startsWith(target)) {
-                String ordinaryUrl =
-                        subtractTargetAndFormat(previewFileVo.getPathFileName());
-                model.addAttribute("ordinaryUrl", ordinaryUrl);
+                setOrdinaryUrl(previewFileVo, model);
                 log.info("Preview方式预览【" + previewFileVo.getPathFileName() +
                         "】/pdf");
                 return "pdf";
@@ -108,9 +107,7 @@ public class FilePreviewHandle {
                 || TEXT_TYPE.contains(extension.toLowerCase())) {
             //excel text文本 格式都转换成html显示
             if (previewFileVo.getPathFileName().startsWith(target)) {
-                String ordinaryUrl =
-                        subtractTargetAndFormat(previewFileVo.getPathFileName());
-                model.addAttribute("ordinaryUrl", ordinaryUrl);
+                setOrdinaryUrl(previewFileVo, model);
                 log.info("Preview方式预览【" + previewFileVo.getPathFileName() +
                         "】/html");
                 return "html";
@@ -122,5 +119,16 @@ public class FilePreviewHandle {
             throw new RuntimeException("The [" + extension + "] type " +
                     "file's conversion is not supported ");
         }
+    }
+
+
+    private void setOrdinaryUrl(PreviewFileVo previewFileVo, Model model){
+        String ordinaryUrl =
+                subtractTargetAndFormat(previewFileVo.getPathFileName());
+        setOrdinaryUrl(ordinaryUrl,model);
+    }
+    private void setOrdinaryUrl(String  ordinaryUrl, Model model){
+        log.info("get now token value = {}", TokenCatchUtils.getCurrentToken());
+        model.addAttribute("ordinaryUrl", ordinaryUrl+"?access_token="+TokenCatchUtils.getCurrentToken());
     }
 }

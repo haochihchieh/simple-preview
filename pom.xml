@@ -12,6 +12,7 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<skipTests>true</skipTests>
+
 	</properties>
 	
 	<parent>
@@ -120,7 +121,32 @@
 			<systemPath>${pom.basedir}/src/main/resources/lib/chardet-1.0.jar
 			</systemPath>
 		</dependency>
-	
+
+
+		<!--安全框架
+
+				2.1.2.RELEASE的版本里
+
+				RemoteTokenServices.loadAuthentication
+
+				map.containsKey("active") && !"true".equals(String.valueOf(map.get("active")))
+
+				加了这样的判断 更具备兼容性
+
+				这样的更具备兼容性
+		-->
+		<dependency>
+			<groupId>org.springframework.security.oauth</groupId>
+			<artifactId>spring-security-oauth2</artifactId>
+			<version>2.3.6.RELEASE</version>
+		</dependency>
+		<!--自动装配-->
+		<dependency>
+			<groupId>org.springframework.security.oauth.boot</groupId>
+			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+			<version>2.1.2.RELEASE</version>
+		</dependency>
+
 	</dependencies>
 	
 	<build>

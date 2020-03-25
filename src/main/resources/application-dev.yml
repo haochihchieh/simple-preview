@@ -39,15 +39,15 @@ server:
 jodconverter:
   local:
     enabled: true
-    office-home: /opt/openoffice4
+    office-home: C:\Program Files (x86)\OpenOffice 4
     max-tasks-per-process: 10
     port-numbers: 8002
 
 #操作先关文件存放的根目录,此目录在初始化时候 里面的内容会被删除
 converter:
-  source: /opt/conventer/resource
-  temp: /opt/conventer/temp
-  target: /opt/conventer/target
+  source: d:/conventer/resource
+  temp: d:/conventer/temp
+  target: d:/conventer/target
 
 #最大连接数
 http.maxTotal: 100
@@ -61,3 +61,17 @@ http.connectionRequestTimeout: 500
 http.socketTimeout: 100000
 #提交请求前测试连接是否可用
 http.staleConnectionCheckEnabled: true
+
+
+security:
+  oauth2:
+    resource:
+      loadBalanced: true
+      #此处配置认证服务器的地址  因为没有集成 nacos 或者其他注册中心，需要手动输入ip地址
+      token-info-uri: http://192.168.0.50:9999/oauth/check_token
+    client:
+      client-id: pms
+      client-secret: 123456
+      scope: server
+  #特殊配置 是否启用 oatuh2.0权限验证服务 false/true
+  enable: false

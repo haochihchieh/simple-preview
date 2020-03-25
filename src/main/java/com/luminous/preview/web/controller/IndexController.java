@@ -42,7 +42,7 @@ public class IndexController {
     private FilePreviewHandle filePreviewHandle;
 
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/version", method = RequestMethod.GET)
     public String index(Map<String, Object> map) {
         map.put("version", "v1.0");
         return "index";
@@ -50,7 +50,6 @@ public class IndexController {
 
     /**
      * http://node06:8900/preview?url=http://192.168.0.50/files/2020/03/25/e9b805ec-c311-49e7-b7ef-0f68213cf978.docx
-     *
      * http://127.0.0.1:8900/preview?url=http://192.168.0.50/files/2020/03/25/17a0a23f-783b-4f0f-bf40-281893692dc7.xlsx
      * @param url
      * @param model
