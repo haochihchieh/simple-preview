@@ -39,15 +39,15 @@ server:
 jodconverter:
   local:
     enabled: true
-    office-home: C:\Program Files (x86)\OpenOffice 4
+    office-home: /opt/openoffice4
     max-tasks-per-process: 10
     port-numbers: 8002
 
 #操作先关文件存放的根目录,此目录在初始化时候 里面的内容会被删除
 converter:
-  source: d:/conventer/resource
-  temp: d:/conventer/temp
-  target: d:/conventer/target
+  source: /opt/conventer/resource
+  temp: /opt/conventer/temp
+  target: /opt/conventer/target
 
 #最大连接数
 http.maxTotal: 100
