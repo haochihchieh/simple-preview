@@ -84,8 +84,9 @@ public class IndexController {
             redisService.savePreview(redisFile);
             return filePreviewHandle.charge(targetFileNature, model);
         } catch (Exception ex) {
-            model.addAttribute("exception", ex.getMessage());
+            model.addAttribute("exception", "error");
             log.error("预览失败：" + url);
+            ex.printStackTrace();
             return "error";
         }
     }

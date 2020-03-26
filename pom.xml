@@ -118,8 +118,7 @@
 			<artifactId>chardet-1.0.jar</artifactId>
 			<version>1.0</version>
 			<scope>system</scope>
-			<systemPath>${pom.basedir}/src/main/resources/lib/chardet-1.0.jar
-			</systemPath>
+			<systemPath>${pom.basedir}/src/main/resources/lib/chardet-1.0.jar</systemPath>
 		</dependency>
 
 
@@ -159,11 +158,20 @@
 	</dependencies>
 	
 	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<version>2.1.8.RELEASE</version>
+				<configuration>
+					<finalName>${project.build.finalName}</finalName>
+					<includeSystemScope>true</includeSystemScope>
+				</configuration>
 				<executions>
 					<execution>
 						<goals>
@@ -171,22 +179,8 @@
 						</goals>
 					</execution>
 				</executions>
-				<configuration>
-					<fork>true</fork>
-				</configuration>
 			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-					<compilerArguments>
-					
-					</compilerArguments>
-				</configuration>
-			</plugin>
+
 		</plugins>
 	</build>
 
