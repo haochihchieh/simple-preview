@@ -7,8 +7,7 @@
 </head>
 
 <body>
-
-${ordinaryUrl}
+加载中..
 <script language="javascript" type="text/javascript">
     window.location.href = "${ordinaryUrl}";
 </script>
