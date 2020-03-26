@@ -49,7 +49,7 @@ public class IndexController {
     }
 
     /**
-     * http://node06:8900/preview?url=http://192.168.0.50/files/2020/03/25/e9b805ec-c311-49e7-b7ef-0f68213cf978.docx
+     * http://192.168.0.50:8900/preview?url=http://192.168.0.50/files/2020/03/25/e9b805ec-c311-49e7-b7ef-0f68213cf978.docx
      * http://192.168.0.50:8900/preview?url=http://192.168.0.50/files/2020/03/26/13ad9be9-642b-42d7-9986-314044b4e2fb.xls
      * @param url
      * @param model
