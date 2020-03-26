@@ -1,4 +1,7 @@
 <html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
 <body>
 <h2>
     因为一些原因，预览失败！错误如下：<br/>

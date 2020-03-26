@@ -68,7 +68,7 @@ security:
     resource:
       loadBalanced: true
       #此处配置认证服务器的地址  因为没有集成 nacos 或者其他注册中心，需要手动输入ip地址
-      token-info-uri: http://192.168.0.50:9999/oauth/check_token
+      token-info-uri: http://192.168.0.50/auth/oauth/check_token
     client:
       client-id: pms
       client-secret: 123456

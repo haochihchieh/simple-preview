@@ -4,6 +4,7 @@ import com.luminous.preview.domain.dto.TargetFileNature;
 import com.luminous.preview.domain.vo.PreviewFileVo;
 import com.luminous.security.utils.TokenCatchUtils;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.ui.Model;
@@ -128,7 +129,8 @@ public class FilePreviewHandle {
         setOrdinaryUrl(ordinaryUrl,model);
     }
     private void setOrdinaryUrl(String  ordinaryUrl, Model model){
-        log.info("get now token value = {}", TokenCatchUtils.getCurrentToken());
-        model.addAttribute("ordinaryUrl", ordinaryUrl+"?access_token="+TokenCatchUtils.getCurrentToken());
+        String token = TokenCatchUtils.getCurrentToken();
+        log.info("get now token value = {}",token );
+        model.addAttribute("ordinaryUrl", ordinaryUrl+(StringUtils.isEmpty(token) ? "":"?access_token="+token));
     }
 }

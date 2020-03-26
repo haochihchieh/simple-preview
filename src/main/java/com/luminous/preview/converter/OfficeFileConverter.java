@@ -3,8 +3,11 @@ package com.luminous.preview.converter;
 import com.luminous.preview.common.utils.FileUtil;
 import com.luminous.preview.common.utils.SHAUtil;
 import com.luminous.preview.domain.dto.TargetFileNature;
+import com.luminous.preview.service.filehander.HtmlAddViewportMeta;
 import lombok.extern.slf4j.Slf4j;
 import org.jodconverter.DocumentConverter;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
@@ -52,6 +55,7 @@ public class OfficeFileConverter {
                             targetDir + File.separator + pureName + ".html";
                     File targetFile = new File(targetPathFileName);
                     converter.convert(sourceFile).to(targetFile).execute();
+                    HtmlAddViewportMeta.add(targetFile);
                     TargetFileNature targetFileNature =
                             new TargetFileNature();
                     long bytes = targetFile.length();
